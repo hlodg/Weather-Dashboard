@@ -6,8 +6,7 @@ var windToday= $("#windToday");
 var Humidity = $("#Humidity");
 var uvIndex= $("#uvIndex");
 var cityDate= $("#cityDate");
-// var todaysDate= moment().format('L');
-
+var currentDate= moment().format("dddd, MMMM Do");
 
 searchBTN.on("click", search);
 
@@ -27,7 +26,7 @@ function search(e){
 };
 
 function displayWeather(weather){
-    cityDate.text(weather.name + " Today");
+    cityDate.text(weather.name + " "+ currentDate);
     tempToday.text("Temp: " + weather.main.temp + " degrees kelvin");
     windToday.text("Wind Speed: " + weather.wind.speed+ " kilometers per hour");
     Humidity.text("Humidity: "+ weather.main.humidity + " %");
