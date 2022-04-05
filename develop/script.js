@@ -49,34 +49,22 @@ function displayWeather(weather){
         })
 }
 
+
 function display5DayWeather(weather) {
     var daily = weather.daily;
     i=0
-    while(i<=5) {
-
-        i+=1
+    while(i<5) {
+        var w = weather.daily[i];
+        var date = moment().add(i+1, 'days').calendar();
+        var id = "tomorrow"+(i+1);
+        var element = $("#"+id);
+        var iconURL = "http://openweathermap.org/img/wn/"+w.weather.icon+"@2x.png";
+        element.find(".card-header").text(date);
+        element.find(".icon").attr("src",iconURL);
+        element.find(".temp").text("Temp: " + w.temp.day + " degrees kelvin");
+        element.find(".wind").text("Wind Speed: " + w.wind_speed+ " kilometers per hour");
+        element.find(".humidity").text("Humidity: "+ w.humidity + " %");
+        element.find(".uvindex").text("UV Index: "+ w.uvi);
+        i+=1;
     }
 }
-
-// create dates and text to input into headers of daily weather 
-var tomorrow1=$("#tomorrow1");
-var tomorrow2=$("#tomorrow2");
-var tomorrow3=$("#tomorrow3");
-var tomorrow4=$("#tomorrow4");
-var tomorrow5=$("#tomorrow5");
-
-var moment1= moment().add(1, 'days').calendar();
-var moment2= moment().add(2, 'days').calendar();
-var moment3= moment().add(3, 'days').calendar();
-var moment4= moment().add(4, 'days').calendar();
-var moment5= moment().add(5, 'days').calendar();
-
-tomorrow1.text(moment1);
-tomorrow2.text(moment2);
-tomorrow3.text(moment3);
-tomorrow4.text(moment4);
-tomorrow5.text(moment5);
-
-// create function for getting and displaying text in the 5day forecast
-
-
