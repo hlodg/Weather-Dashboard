@@ -27,8 +27,8 @@
                 <form>
                     <legend>Search for City</legend>
                     <div class="mb-3">
-                       <input id="inputCity" class="form-control form-control-lg" type="text" placeholder="type city here" aria-label=".form-control-lg example">
-                       <button id="searchBTN" type="submit" class="btn btn-primary">Submit</button>
+                       <input id="inputCity" class="form-control m-2 form-control-lg" type="text" placeholder="Type Here" aria-label=".form-control-lg example">
+                       <button id="searchBTN" type="submit" class="btn btn-primary m-2">Submit</button>
                     </div>
                   </form>
                   <div id="storedSearchBTN"></div>
@@ -37,6 +37,7 @@
                 <div class="card">
                     <div class="card-body" id="todaysWeather">
                       <h1 id="cityDate"></h1>
+                      <i id="icon"></i>
                       <p id="tempToday">Temp: </p>
                       <p id="windToday">Wind: </p>
                       <p id="Humidity">Humidity: </p>
@@ -45,42 +46,47 @@
                 </div>
                 <div class="container row">
                     <h3>5-Day Forecast:</h3>
-                    <div class="card col-2 text-white bg-dark m-2" style="max-width: 18rem;">
-                        <div class="card-header" id="tomorrow1"></div>
+                    <div class="card col-2 text-white bg-dark m-2" style="max-width: 18rem;" id="tomorrow1">
+                        <div class="card-header"></div>
                         <div class="card-body">
+                          <i id="icon1"></i>
                           <p id="temp1">Temp: </p>
                           <p id="wind1">Wind: </p>
                           <p id="Humidity1">Humidity: </p>
                           <p id="uvIndex1">UV Index: </p>
                         </div>
                     </div>  
-                    <div class="card col-2 text-white bg-dark m-2" style="max-width: 18rem;">
-                        <div class="card-header" id="tomorrow2">Header</div>
+                    <div class="card col-2 text-white bg-dark m-2" style="max-width: 18rem;" id="tomorrow2">
+                        <div class="card-header">Header</div>
                         <div class="card-body">
+                          <i id="icon2"></i>
                           <p id="temp2">Temp: </p>
                           <p id="wind2">Wind: </p>
                           <p id="Humidity2">Humidity: </p>
                           <p id="uvIndex2">UV Index: </p>                        </div>
                     </div>  
-                    <div class="card col-2 text-white bg-dark m-2" style="max-width: 18rem;">
-                        <div class="card-header" id="tomorrow3">Header</div>
+                    <div class="card col-2 text-white bg-dark m-2" style="max-width: 18rem;" id="tomorrow3">
+                        <div class="card-header">Header</div>
                         <div class="card-body">
+                          <i id="icon3"></i>
                           <p id="temp3">Temp: </p>
                           <p id="wind3">Wind: </p>
                           <p id="Humidity3">Humidity: </p>
                           <p id="uvIndex3">UV Index: </p>                        </div>
                     </div>  
-                    <div class="card col-2 text-white bg-dark m-2" style="max-width: 18rem;">
-                        <div class="card-header" id="tomorrow4">Header</div>
+                    <div class="card col-2 text-white bg-dark m-2" style="max-width: 18rem;" id="tomorrow4">
+                        <div class="card-header">Header</div>
                         <div class="card-body">
+                          <i id="icon4"></i>
                           <p id="temp4">Temp: </p>
                           <p id="wind4">Wind: </p>
                           <p id="Humidity4">Humidity: </p>
                           <p id="uvIndex4">UV Index: </p>                         </div>
                     </div>  
-                    <div class="card col-2 text-white bg-dark m-2" style="max-width: 18rem;">
-                        <div class="card-header" id="tomorrow5">Header</div>
+                    <div class="card col-2 text-white bg-dark m-2" style="max-width: 18rem;" id="tomorrow5">
+                        <div class="card-header">Header</div>
                         <div class="card-body">
+                          <i id="icon5"></i>
                           <p id="temp5">Temp: </p>
                           <p id="wind5">Wind: </p>
                           <p id="Humidity5">Humidity: </p>
@@ -92,6 +98,7 @@
           </div>
     </main>
 
+    <script src="https://kit.fontawesome.com/19a6d99f33.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="./develop/script.js"></script>

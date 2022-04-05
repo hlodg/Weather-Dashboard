@@ -23,7 +23,7 @@ function search(e){
         .then(function(weather){
             // console.log(weather);
             displayWeather(weather);
-        })
+        });
 };
 
 // displays the current weather in the white box and city
@@ -33,6 +33,29 @@ function displayWeather(weather){
     windToday.text("Wind Speed: " + weather.wind.speed+ " kilometers per hour");
     Humidity.text("Humidity: "+ weather.main.humidity + " %");
     uvIndex.text("UV Index: "+ weather.sys.type);
+
+    var lat = weather.coord.lat;
+    var lon = weather.coord.lon;
+    var exclude = "minutely,hourly,alerts";
+
+    var dailyWeatherURL = "https://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lon+"&exclude="+exclude+"&appid="+APIKey;
+    fetch(dailyWeatherURL)
+        .then(function(response){
+            // console.log(response);
+            return response.json()
+        })
+        .then(function(response){
+            display5DayWeather(response);
+        })
+}
+
+function display5DayWeather(weather) {
+    var daily = weather.daily;
+    i=0
+    while(i<=5) {
+
+        i+=1
+    }
 }
 
 // create dates and text to input into headers of daily weather 
