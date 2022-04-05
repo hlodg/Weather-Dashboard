@@ -1,6 +1,13 @@
 var APIKey= "4a810a887073678340515af76b1c24a8";
 var todaysWeather= $("#todaysWeather");
 var searchBTN=$("#searchBTN");
+var tempToday=$("#tempToday");
+var windToday= $("#windToday");
+var Humidity = $("#Humidity");
+var uvIndex= $("#uvIndex");
+var cityDate= $("#cityDate");
+// var todaysDate= moment().format('L');
+
 
 searchBTN.on("click", search);
 
@@ -14,11 +21,15 @@ function search(e){
             return response.json()
         })
         .then(function(weather){
-            // console.log(weather);
+            console.log(weather);
              displayWeather(weather);
         })
 };
 
 function displayWeather(weather){
-    todaysWeather.text(weather.main.temp);
+    cityDate.text(weather.name + " Today");
+    tempToday.text("Temp: " + weather.main.temp + " degrees kelvin");
+    windToday.text("Wind Speed: " + weather.wind.speed+ " kilometers per hour");
+    Humidity.text("Humidity: "+ weather.main.humidity + " %");
+    uvIndex.text("UV Index: "+ weather.sys.type);
 }
