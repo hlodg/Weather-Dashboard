@@ -58,7 +58,7 @@ function display5DayWeather(weather) {
         var date = moment().add(i+1, 'days').calendar();
         var id = "tomorrow"+(i+1);
         var element = $("#"+id);
-        var iconURL = "http://openweathermap.org/img/wn/"+w.weather.icon+"@2x.png";
+        var iconURL = "http://openweathermap.org/img/wn/"+w.weather[0].icon+"@2x.png";
         element.find(".card-header").text(date);
         element.find(".icon").attr("src",iconURL);
         element.find(".temp").text("Temp: " + w.temp.day + " degrees kelvin");
