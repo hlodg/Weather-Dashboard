@@ -1,7 +1,7 @@
 #title {
-    background-image: linear-gradient(to right, darkblue , lightblue) !important;
+    background-image: linear-gradient(to right, black , lightblue) !important;
     box-shadow: 10px 5px 5px rgb(0, 0, 4);
-    color:black;
+    color:white;
     font-weight: 1000;
     text-align: center;
 }
