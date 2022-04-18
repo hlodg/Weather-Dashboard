@@ -21,7 +21,7 @@ function search(e){
             return response.json()
         })
         .then(function(weather){
-            // console.log(weather);
+            console.log(weather);
             displayWeather(weather);
         });
 };
