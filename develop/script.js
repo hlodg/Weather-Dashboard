@@ -14,7 +14,7 @@ searchBTN.on("click", search);
 function search(e){
     e.preventDefault();
     var city=$("#inputCity").val();
-    var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
     fetch(queryURL)
         .then(function(response){
             // console.log(response);
@@ -58,7 +58,7 @@ function display5DayWeather(weather) {
         var date = moment().add(i+1, 'days').calendar();
         var id = "tomorrow"+(i+1);
         var element = $("#"+id);
-        var iconURL = "http://openweathermap.org/img/wn/"+w.weather[0].icon+"@2x.png";
+        var iconURL = "https://openweathermap.org/img/wn/"+w.weather[0].icon+"@2x.png";
         element.find(".card-header").text(date);
         element.find(".icon").attr("src",iconURL);
         element.find(".temp").text("Temp: " + w.temp.day + " degrees kelvin");
